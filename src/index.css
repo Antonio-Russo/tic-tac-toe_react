@@ -1,0 +1,168 @@
+body {
+  background-color: #444;
+  margin: 0;
+  color: #fff;
+  font: 32px "Architects Daughter", sans-serif;
+}
+.modeCnt {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+.vsDesc {
+  position: absolute;
+  width: 100vw;
+  font-size: 70px;
+}
+.modeCol {
+  margin: 50px;
+  height: calc(100% - 100px);
+  width: calc(100% - 100px);
+  display: flex;
+  align-items: center;
+}
+.modeChoice {
+  flex: 1 0 auto;
+}
+.modeChoice:hover {
+  font-size: 80px;
+}
+.modeTag {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: #333;
+}
+.modeTag.hu {
+  background-color: rgb(238, 211, 169);
+}
+.modeTag.ai {
+  background-color: rgb(158, 215, 230);
+}
+.board {
+  padding: 100px 30px;
+  margin: 20px;
+  /* background-color: skyblue;*/
+}
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.square {
+  background-color: #000;
+  color: #fff;
+  font-size: 75px;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.square:hover {
+  background-color: #fff;
+}
+.square .inner {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.square .inner:hover {
+  outline: 0;
+}
+
+.score {
+  width: 410px;
+  height: 100px;
+  position: absolute;
+  color: #888;
+}
+.score:after {
+  content: " ";
+  border-top: 100px solid rgba(89, 174, 199, 0.1);
+  border-right: 420px solid transparent;
+  width: 0;
+  position: absolute;
+}
+.score.top.active:after {
+  border-top: 100px solid rgba(89, 174, 199, 1);
+}
+.score.top {
+  margin: -100px 0;
+}
+
+.score.bottom:after {
+  content: " ";
+  border-top: 100px solid transparent;
+  border-right: 420px solid rgba(210, 58, 72, 0.1);
+  width: 0;
+  position: absolute;
+}
+.score.active {
+  color: #fff;
+}
+.score.bottom.active:after {
+  border-right: 420px solid rgba(210, 58, 72, 1);
+}
+
+.score > div {
+  position: absolute;
+  z-index: 99;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.score.bottom > div {
+  text-align: right;
+  width: 400px;
+  padding-top: 50px;
+}
+.score > div.scorePlayer {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+}
+.score.top > div.scorePlayer {
+  right: 0;
+}
+.score.bottom > div.scorePlayer {
+  left: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 410px) {
+  .board {
+    padding: 100px 0px;
+    margin: 0;
+  }
+  .score {
+    transform: scale(0.85);
+    overflow: hidden;
+  }
+  .square {
+    width: calc(100vw / 3 - 50px);
+    height: calc(100vw / 3 - 50px);
+    font-size: 1.7em;
+  }
+  .score.top {
+    margin: -100px -20px;
+  }
+  .score.bottom {
+    margin: 0 -30px;
+  }
+  .score.bottom > div {
+    right: 10px;
+  }
+  .score.top > div.scorePlayer {
+    right: 20px;
+  }
+}
