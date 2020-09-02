@@ -6,7 +6,9 @@ import Mode from "./Mode";
 function App() {
   const [mode, setMode] = useState(null);
   return (
-    <div className="App">{mode ? <Game /> : <Mode setMode={setMode} />}</div>
+    <div className="App">
+      {mode ? <Game mode={mode} /> : <Mode setMode={setMode} />}
+    </div>
   );
 }
 
