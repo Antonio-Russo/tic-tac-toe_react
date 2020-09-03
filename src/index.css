@@ -140,6 +140,13 @@ body {
 }
 
 @media screen and (max-width: 410px) {
+  .vsDesc {
+    top: 10px;
+  }
+  .modeCol {
+    flex-direction: column;
+    padding-top: 100px;
+  }
   .board {
     padding: 100px 0px;
     margin: 0;
