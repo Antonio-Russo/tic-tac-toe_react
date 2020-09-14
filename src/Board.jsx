@@ -186,7 +186,6 @@ const Board = (props) => {
             {[...Array(3)].map((e, i) => (
               <Square
                 onClick={(e) => {
-                  debugger;
                   let currentIndex = 3 * k + i;
                   mode === "A"
                     ? handleClick(currentIndex)
